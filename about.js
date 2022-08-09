@@ -21,10 +21,10 @@ function onclickAbout ( event )
   <img src="img/images.jpg" class="card-img-top" alt="my picture">
   <div class="card-body">
     <h5 class="card-title">Ruth Ohayon</h5>
-    <p class="card-text">Age: 33</p>
-    <p class="card-text">Married + 3 children</p>
-    <email>Email: ruthc30@gmail.com</email>
-    <address>Address: Jerusalem</address>
+    <p class="card-text">Age: my age</p>
+    <p class="card-text">Married + children</p>
+    <email>Email: xxxxx@gmail.com</email>
+    <address>Address: My Address</address>
   </div>
   </div>
   </div>
