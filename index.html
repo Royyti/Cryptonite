@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Project 2 Cryptonite Ruth Ohayon</title>
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <style>
+            .parallax {
+                /* The image used */
+                background-image: url("img/etf-investment-guide-theme-crypto.jpg");
+
+                /* Set a specific height 
+                height: 500px;*/
+
+                /* Create the parallax scrolling effect */
+                background-attachment: fixed;
+                z-index: -1;
+                background-position: top right;
+                background-repeat: no-repeat;
+                border-radius: 1px;
+
+            }
+
+        </style>
+
+
+
+    </head>
+
+    <body class="">
+        <div class="container ">
+            <div class="header border-bottom bg-secondary p-5 text-dark parallax bg-opacity-10">
+                <h1>Cryptonite
+                    <!--  <img src="img/etf-investment-guide-theme-crypto.jpg" style="width: 150px;"
+                        class="parallax rounded float-end " alt="Crypto">-->
+                </h1>
+            </div>
+
+            <main class="main">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+                        <ul class="nav nav-pills">
+                            <li onclick="onclickHome(event)" class="nav-item">
+                                <a id="Home" class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li onclick="onclickReport(event)" class="nav-item">
+                                <a id="Report" class="nav-link" href="#">Live Report</a>
+                            </li>
+                            <li onclick="onclickAbout(event)" class="nav-item">
+                                <a id="About" class="nav-link" href="#">About</a>
+                            </li>
+                        </ul>
+                        <form id="formSearch" class="d-flex ">
+                            <input id="mysearch" for="search" class="form-control me-2" type="search"
+                                placeholder="Search" aria-label="Search">
+                            <button id="search" class="btn btn-outline-success" onclick="onclickSrc(event)"
+                                type="submit">Search</button>
+                        </form>
+                    </div>
+                </nav>
+
+                <div id="coins" class="row">
+                </div>
+                <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+
+            </main>
+
+            <!-- Modal -->
+
+            <div id="myModal" class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Pay Attention</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Only 5 coins can be selected for tracking.
+                            You may remove one of the coins instead of the selected currency:
+                            <br>
+                            <form id="varCoins">
+                                <input data-id='${arrTrackCoins[ 0 ].id}' class="coin form-check-input" id="coin1"
+                                    name="coin" type="radio">
+                                <label value="coin1" class="form-check-label coin1" for="coin1" name="coin"></label>
+                                <input data-id="${ arrTrackCoins[ 1 ].id }" class="coin form-check-input" id="coin2"
+                                    name="coin" type="radio">
+                                <label value="coin2" class="form-check-label coin2" for="coin2" name="coin"></label>
+                                <input data-id="${ arrTrackCoins[ 2 ].id }" class="coin form-check-input" id="coin3"
+                                    name="coin" type="radio">
+                                <label value="coin3" class="form-check-label coin3" for="coin3" name="coin"></label>
+                                <input data-id="${ arrTrackCoins[ 3 ].id }" class="coin form-check-input" id="coin4"
+                                    name="coin" type="radio">
+                                <label value="coin4" class="form-check-label coin4" for="coin4" name="coin"></label>
+                                <input data-id="${ arrTrackCoins[ 4 ].id }" class="coin form-check-input" id="coin5"
+                                    name="coin" type="radio">
+                                <label value="coin5" class="form-check-label coin5" for="coin5" name="coin"></label>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" data-id="${ coinCounter }" onclick="onClickClose(event)"
+                                class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" data-id="${ coinCounter }" onclick="onClickSaveChanges(event)"
+                                class="btn btn-primary">Save Changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id='spinner' class="modal" tabindex="-1">
+                <div class="modal-dialog modal-sm modal-dialog-centered">
+                    <div class="modal-content bg-transparent border-0">
+                        <div class="modal-body text-center">
+                            <div class="spinner-border text-light" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="bootstrap.min.js"></script>
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+        <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+        <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+        <script src="search.js"></script>
+        <script src="modal.js"></script>
+        <script src="cache.js"></script>
+        <script src="more_info.js"></script>
+        <script src="live_report.js"></script>
+        <script src="about.js"></script>
+        <script src="script.js"></script>
+    </body>
+
+</html>
